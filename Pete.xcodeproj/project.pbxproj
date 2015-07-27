@@ -12,6 +12,9 @@
 		DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B51B6689E1001898B4 /* Images.xcassets */; };
 		DE2FF7B91B6689E1001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B71B6689E1001898B4 /* MainMenu.xib */; };
 		DE2FF7C51B6689E1001898B4 /* PeteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7C41B6689E1001898B4 /* PeteTests.m */; };
+		DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */; };
+		DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */; };
+		DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2FF7D41B668CB9001898B4 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 		DE2FF7BE1B6689E1001898B4 /* PeteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FF7C31B6689E1001898B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE2FF7C41B6689E1001898B4 /* PeteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeteTests.m; sourceTree = "<group>"; };
+		DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyManager.h; sourceTree = "<group>"; };
+		DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyManager.m; sourceTree = "<group>"; };
+		DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCodeConverter.h; sourceTree = "<group>"; };
+		DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCodeConverter.m; sourceTree = "<group>"; };
+		DE2FF7D41B668CB9001898B4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +67,7 @@
 		DE2FF7A21B6689E1001898B4 = {
 			isa = PBXGroup;
 			children = (
+				DE2FF7D41B668CB9001898B4 /* Carbon.framework */,
 				DE2FF7AD1B6689E1001898B4 /* Pete */,
 				DE2FF7C11B6689E1001898B4 /* PeteTests */,
 				DE2FF7AC1B6689E1001898B4 /* Products */,
@@ -78,6 +88,10 @@
 			children = (
 				DE2FF7B01B6689E1001898B4 /* AppDelegate.h */,
 				DE2FF7B11B6689E1001898B4 /* AppDelegate.m */,
+				DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */,
+				DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */,
+				DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */,
+				DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */,
 				DE2FF7B51B6689E1001898B4 /* Images.xcassets */,
 				DE2FF7B71B6689E1001898B4 /* MainMenu.xib */,
 				DE2FF7AE1B6689E1001898B4 /* Supporting Files */,
@@ -211,6 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE2FF7B41B6689E1001898B4 /* main.m in Sources */,
+				DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */,
+				DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */,
 				DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
