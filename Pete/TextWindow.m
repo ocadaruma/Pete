@@ -39,6 +39,7 @@
   [self setLevel:NSFloatingWindowLevel];
   [self setBackgroundColor:[NSColor whiteColor]];
   [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
+  [self setStyleMask:NSHUDWindowMask];
 //  [self setStyleMask:NSNonactivatingPanelMask];
 }
 

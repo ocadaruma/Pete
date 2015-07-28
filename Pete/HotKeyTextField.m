@@ -55,6 +55,17 @@
   return self;
 }
 
+- (BOOL)becomeFirstResponder {
+  BOOL status = [super becomeFirstResponder];
+
+  if (status) {
+    self.placeholderString = @"";
+    self.stringValue = @"";
+  }
+
+  return status;
+}
+
 - (BOOL)textShouldBeginEditing:(NSText *)textObject {
   return NO;
 }

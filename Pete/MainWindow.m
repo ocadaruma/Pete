@@ -8,7 +8,6 @@
 
 #import "MainWindow.h"
 #import "HotKeyManager.h"
-#import "HotKeyTextView.h"
 #import "KeyCodeConverter.h"
 
 @interface MainWindow ()
@@ -32,12 +31,13 @@
       if (theEvent.modifierFlags & NSAlternateKeyMask) [hotKeyString appendString:@"⌥"];
 
       NSString* keyStr = stringOfKeyCode(@(theEvent.keyCode));
-      if (keyStr){
-        [hotKeyString appendString:keyStr];
-        [self makeFirstResponder:_button];
-      }
+      _hotKeyTextField.placeholderString = hotKeyString;
 
-      _hotKeyTextField.stringValue = hotKeyString;
+      if (hotKeyString.length > 0 && keyStr){
+        [hotKeyString appendString:keyStr];
+        [self makeFirstResponder:nil];
+        _hotKeyTextField.stringValue = hotKeyString;
+      }
     }
   }
 

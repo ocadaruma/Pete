@@ -10,7 +10,6 @@
 		DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B11B6689E1001898B4 /* AppDelegate.m */; };
 		DE2FF7B41B6689E1001898B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B31B6689E1001898B4 /* main.m */; };
 		DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B51B6689E1001898B4 /* Images.xcassets */; };
-		DE2FF7B91B6689E1001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B71B6689E1001898B4 /* MainMenu.xib */; };
 		DE2FF7C51B6689E1001898B4 /* PeteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7C41B6689E1001898B4 /* PeteTests.m */; };
 		DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */; };
 		DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */; };
@@ -20,8 +19,8 @@
 		DE2FF7F61B673985001898B4 /* TextWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextWindowController.m */; };
 		DE2FF7F71B673985001898B4 /* TextWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextWindowController.xib */; };
 		DE2FF7FA1B674467001898B4 /* HotKeyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F91B674467001898B4 /* HotKeyTextField.m */; };
-		DE2FF7FD1B674E5B001898B4 /* HotKeyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7FC1B674E5B001898B4 /* HotKeyTextView.m */; };
 		DE2FF8001B675170001898B4 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7FF1B675170001898B4 /* MainWindow.m */; };
+		DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF8011B67F2F3001898B4 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		DE2FF7B11B6689E1001898B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE2FF7B31B6689E1001898B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE2FF7B51B6689E1001898B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DE2FF7B81B6689E1001898B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DE2FF7BE1B6689E1001898B4 /* PeteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FF7C31B6689E1001898B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE2FF7C41B6689E1001898B4 /* PeteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeteTests.m; sourceTree = "<group>"; };
@@ -59,10 +57,9 @@
 		DE2FF7F51B673985001898B4 /* TextWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextWindowController.xib; sourceTree = "<group>"; };
 		DE2FF7F81B674467001898B4 /* HotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyTextField.h; sourceTree = "<group>"; };
 		DE2FF7F91B674467001898B4 /* HotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyTextField.m; sourceTree = "<group>"; };
-		DE2FF7FB1B674E5B001898B4 /* HotKeyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyTextView.h; sourceTree = "<group>"; };
-		DE2FF7FC1B674E5B001898B4 /* HotKeyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyTextView.m; sourceTree = "<group>"; };
 		DE2FF7FE1B675170001898B4 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		DE2FF7FF1B675170001898B4 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		DE2FF8011B67F2F3001898B4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +103,7 @@
 		DE2FF7AD1B6689E1001898B4 /* Pete */ = {
 			isa = PBXGroup;
 			children = (
+				DE2FF8011B67F2F3001898B4 /* MainMenu.xib */,
 				DE2FF7B01B6689E1001898B4 /* AppDelegate.h */,
 				DE2FF7B11B6689E1001898B4 /* AppDelegate.m */,
 				DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */,
@@ -113,7 +111,6 @@
 				DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */,
 				DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */,
 				DE2FF7B51B6689E1001898B4 /* Images.xcassets */,
-				DE2FF7B71B6689E1001898B4 /* MainMenu.xib */,
 				DE2FF7FE1B675170001898B4 /* MainWindow.h */,
 				DE2FF7FF1B675170001898B4 /* MainWindow.m */,
 				DE2FF7AE1B6689E1001898B4 /* Supporting Files */,
@@ -126,8 +123,6 @@
 				DE2FF7F51B673985001898B4 /* TextWindowController.xib */,
 				DE2FF7F81B674467001898B4 /* HotKeyTextField.h */,
 				DE2FF7F91B674467001898B4 /* HotKeyTextField.m */,
-				DE2FF7FB1B674E5B001898B4 /* HotKeyTextView.h */,
-				DE2FF7FC1B674E5B001898B4 /* HotKeyTextView.m */,
 			);
 			path = Pete;
 			sourceTree = "<group>";
@@ -220,7 +215,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = DE2FF7A21B6689E1001898B4;
 			productRefGroup = DE2FF7AC1B6689E1001898B4 /* Products */;
@@ -240,7 +234,7 @@
 			files = (
 				DE2FF7F71B673985001898B4 /* TextWindowController.xib in Resources */,
 				DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */,
-				DE2FF7B91B6689E1001898B4 /* MainMenu.xib in Resources */,
+				DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +260,6 @@
 				DE2FF7B41B6689E1001898B4 /* main.m in Sources */,
 				DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */,
 				DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */,
-				DE2FF7FD1B674E5B001898B4 /* HotKeyTextView.m in Sources */,
 				DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,17 +281,6 @@
 			targetProxy = DE2FF7BF1B6689E1001898B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DE2FF7B71B6689E1001898B4 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE2FF7B81B6689E1001898B4 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE2FF7C61B6689E1001898B4 /* Debug */ = {
@@ -337,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -374,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
