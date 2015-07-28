@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 extern NSNumber* keyCodeOfString(NSString* str);
+extern NSString* stringOfKeyCode(NSNumber* code);

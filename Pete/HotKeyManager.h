@@ -11,7 +11,7 @@
 
 @interface HotKeyManager : NSObject
 
-- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(void))handler;
+- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(NSEvent *))handler;
 - (void)unregisterHotKey:(void *)hotKeyRef;
 + (instancetype)sharedManager;
 

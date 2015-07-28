@@ -21,7 +21,7 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef, EventRef, void *);
 
 @implementation HotKeyManager
 
-- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(void))handler {
+- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(NSEvent *))handler {
   static UInt32 _id = 0;
 
   OSStatus err;
@@ -93,9 +93,9 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef nextHandler, EventRef an
 
   if (event.type == NSSystemDefined && event.subtype == kEventHotKeyPressedSubtype) {
     EventHotKeyRef hotKeyRef = (EventHotKeyRef)event.data1;
-    void(^handler)() = app.targetDict[@((int)hotKeyRef)];
+    void(^handler)(NSEvent *) = app.targetDict[@((int)hotKeyRef)];
     if (handler) {
-      handler();
+      handler(event);
     }
   }
 
