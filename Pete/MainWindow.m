@@ -9,7 +9,6 @@
 #import "MainWindow.h"
 #import "KeyCodeConverter.h"
 #import "PreferenceManager.h"
-//#import <MASShortcut/Shortcut.h>
 
 @interface MainWindow ()
 

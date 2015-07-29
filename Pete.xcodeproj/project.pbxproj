@@ -12,7 +12,6 @@
 		DE2FF7B41B6689E1001898B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B31B6689E1001898B4 /* main.m */; };
 		DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B51B6689E1001898B4 /* Images.xcassets */; };
 		DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */; };
-		DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2FF7D41B668CB9001898B4 /* Carbon.framework */; };
 		DE2FF7F21B672E6F001898B4 /* TextPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F11B672E6F001898B4 /* TextPanelView.m */; };
 		DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextPanelController.m */; };
 		DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextPanelController.xib */; };
@@ -68,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */,
 				A377FCC66FEE09328A8E06D7 /* libPods-Pete.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
