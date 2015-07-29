@@ -7,10 +7,7 @@
 //
 
 #import "PreferenceManager.h"
-#import "KeyCodeConverter.h"
 
-static NSString* const kStoredModifierKey = @"modifier";
-static NSString* const kStoredKeyCodeKey = @"keyCode";
 static NSString* const kStoredOpacityKey = @"opacity";
 static NSString* const kStoredBackgroundColorKey = @"backgroundColor";
 static NSString* const kConfiguredFlagKey = @"configured";
@@ -24,15 +21,6 @@ static NSString* const kConfiguredFlagKey = @"configured";
     color = (NSColor *)[NSUnarchiver unarchiveObjectWithData:data];
   }
   return color;
-}
-
-- (HotKey)hotKey {
-  HotKey key;
-
-  key.modifier = [[NSUserDefaults standardUserDefaults] integerForKey:kStoredModifierKey];
-  key.keyCode = [[NSUserDefaults standardUserDefaults] integerForKey:kStoredKeyCodeKey];
-
-  return key;
 }
 
 - (CGFloat)opacity {
@@ -50,12 +38,6 @@ static NSString* const kConfiguredFlagKey = @"configured";
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)setHotKey:(HotKey)hotKey {
-  [[NSUserDefaults standardUserDefaults] setInteger:hotKey.modifier forKey:kStoredModifierKey];
-  [[NSUserDefaults standardUserDefaults] setInteger:hotKey.keyCode forKey:kStoredKeyCodeKey];
-  [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 - (instancetype)init {
   self = [super init];
 
@@ -63,12 +45,6 @@ static NSString* const kConfiguredFlagKey = @"configured";
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kConfiguredFlagKey]) {
       self.backgroundColor = [NSColor whiteColor];
       self.opacity = 1.0f;
-
-      //デフォルトホットキーはCommand + Shift + A
-      HotKey key;
-      key.modifier = NSCommandKeyMask | NSShiftKeyMask;
-      key.keyCode = keyCodeOfString(@"A").integerValue;
-      self.hotKey = key;
 
       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kConfiguredFlagKey];
       [[NSUserDefaults standardUserDefaults] synchronize];

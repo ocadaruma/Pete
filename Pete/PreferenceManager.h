@@ -9,17 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
-struct HotKey {
-  NSEventModifierFlags modifier;
-  unsigned short keyCode;
-};
-typedef struct HotKey HotKey;
-
 @interface PreferenceManager : NSObject
 
 @property (nonatomic) NSColor* backgroundColor;
 @property (nonatomic) CGFloat opacity;
-@property (nonatomic) HotKey hotKey;
 
 + (instancetype)sharedManager;
 

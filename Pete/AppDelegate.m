@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 #import "TextPanelController.h"
-#import "HotKeyManager.h"
-#import "PreferenceManager.h"
+#import "KeyCodeConverter.h"
+#import <MASShortcut/Shortcut.h>
+
+static NSString *const kHotKeyPreferenceKey = @"HotKey";
 
 @interface AppDelegate ()<NSWindowDelegate>
 
+@property (weak) IBOutlet MASShortcutView *shortcutView;
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (nonatomic) NSMutableSet* panels;
@@ -33,13 +36,14 @@
   [_statusItem setMenu:_statusMenu];
 
   //preference initialization
-  HotKeyManager* hotKeyManager = [HotKeyManager sharedManager];
-  PreferenceManager* prefManager = [PreferenceManager sharedManager];
-  HotKey hotKey = prefManager.hotKey;
-  [hotKeyManager unregisterHotKey];
-  [hotKeyManager registerHotKeyCode:hotKey.keyCode withModifier:hotKey.modifier];
+  _shortcutView.associatedUserDefaultsKey = kHotKeyPreferenceKey;
+  _shortcutView.style = MASShortcutViewStyleDefault;
 
-  hotKeyManager.handler = ^(NSEvent *event) {
+  MASShortcut* shortcut = [MASShortcut shortcutWithKeyCode:keyCodeOfString(@"A").integerValue
+                                             modifierFlags:NSCommandKeyMask | NSShiftKeyMask];
+
+  [[MASShortcutBinder sharedBinder] registerDefaultShortcuts:@{kHotKeyPreferenceKey: shortcut}];
+  [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:kHotKeyPreferenceKey toAction:^{
     TextPanelController* ctrl = [TextPanelController controller];
     [_panels addObject:ctrl.window];
 
@@ -62,7 +66,7 @@
 
     ctrl.window.delegate = self;
     [ctrl showWindow:nil];
-  };
+  }];
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
@@ -71,6 +75,11 @@
 
 - (IBAction)showMainWindow:(id)sender {
   [_window orderFront:nil];
+  [NSApp activateIgnoringOtherApps:YES];
+}
+
+- (IBAction)showAbout:(id)sender {
+  [NSApp orderFrontStandardAboutPanel:nil];
   [NSApp activateIgnoringOtherApps:YES];
 }
 

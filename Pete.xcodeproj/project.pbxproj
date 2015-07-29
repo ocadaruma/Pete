@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A377FCC66FEE09328A8E06D7 /* libPods-Pete.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CF2D4BD814B59007B7A083 /* libPods-Pete.a */; };
 		DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B11B6689E1001898B4 /* AppDelegate.m */; };
 		DE2FF7B41B6689E1001898B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B31B6689E1001898B4 /* main.m */; };
 		DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B51B6689E1001898B4 /* Images.xcassets */; };
-		DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */; };
 		DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */; };
 		DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2FF7D41B668CB9001898B4 /* Carbon.framework */; };
 		DE2FF7F21B672E6F001898B4 /* TextPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F11B672E6F001898B4 /* TextPanelView.m */; };
 		DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextPanelController.m */; };
 		DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextPanelController.xib */; };
-		DE2FF7FA1B674467001898B4 /* HotKeyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F91B674467001898B4 /* HotKeyTextField.m */; };
 		DE2FF8001B675170001898B4 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7FF1B675170001898B4 /* MainWindow.m */; };
 		DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF8011B67F2F3001898B4 /* MainMenu.xib */; };
 		DE2FF8051B67F949001898B4 /* PreferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF8041B67F949001898B4 /* PreferenceManager.m */; };
 		DE2FF80D1B686EBC001898B4 /* TextPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF80C1B686EBC001898B4 /* TextPanel.m */; };
+		DE2FF81B1B68E13D001898B4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF81A1B68E13D001898B4 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		206C73EE587EF50BC07299A3 /* Pods-Pete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pete/Pods-Pete.debug.xcconfig"; sourceTree = "<group>"; };
+		925C8117DF6DCE4C98540F55 /* Pods-Pete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pete.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pete/Pods-Pete.release.xcconfig"; sourceTree = "<group>"; };
 		DE2FF7AB1B6689E1001898B4 /* Pete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FF7AF1B6689E1001898B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE2FF7B01B6689E1001898B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,8 +44,6 @@
 		DE2FF7B51B6689E1001898B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE2FF7BE1B6689E1001898B4 /* PeteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FF7C31B6689E1001898B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyManager.h; sourceTree = "<group>"; };
-		DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyManager.m; sourceTree = "<group>"; };
 		DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCodeConverter.h; sourceTree = "<group>"; };
 		DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCodeConverter.m; sourceTree = "<group>"; };
 		DE2FF7D41B668CB9001898B4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -52,8 +52,6 @@
 		DE2FF7F31B673985001898B4 /* TextPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanelController.h; sourceTree = "<group>"; };
 		DE2FF7F41B673985001898B4 /* TextPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanelController.m; sourceTree = "<group>"; };
 		DE2FF7F51B673985001898B4 /* TextPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextPanelController.xib; sourceTree = "<group>"; };
-		DE2FF7F81B674467001898B4 /* HotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyTextField.h; sourceTree = "<group>"; };
-		DE2FF7F91B674467001898B4 /* HotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyTextField.m; sourceTree = "<group>"; };
 		DE2FF7FE1B675170001898B4 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		DE2FF7FF1B675170001898B4 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
 		DE2FF8011B67F2F3001898B4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -61,6 +59,8 @@
 		DE2FF8041B67F949001898B4 /* PreferenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceManager.m; sourceTree = "<group>"; };
 		DE2FF80B1B686EBC001898B4 /* TextPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanel.h; sourceTree = "<group>"; };
 		DE2FF80C1B686EBC001898B4 /* TextPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanel.m; sourceTree = "<group>"; };
+		DE2FF81A1B68E13D001898B4 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		F0CF2D4BD814B59007B7A083 /* libPods-Pete.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pete.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */,
+				A377FCC66FEE09328A8E06D7 /* libPods-Pete.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127E1112CA68BAE3B3DF7475 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				206C73EE587EF50BC07299A3 /* Pods-Pete.debug.xcconfig */,
+				925C8117DF6DCE4C98540F55 /* Pods-Pete.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B7AE84DA57A0BB078813A7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0CF2D4BD814B59007B7A083 /* libPods-Pete.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE2FF7A21B6689E1001898B4 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,8 @@
 				DE2FF7AD1B6689E1001898B4 /* Pete */,
 				DE2FF7C11B6689E1001898B4 /* PeteTests */,
 				DE2FF7AC1B6689E1001898B4 /* Products */,
+				127E1112CA68BAE3B3DF7475 /* Pods */,
+				4B7AE84DA57A0BB078813A7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,8 +127,6 @@
 				DE2FF8011B67F2F3001898B4 /* MainMenu.xib */,
 				DE2FF7B01B6689E1001898B4 /* AppDelegate.h */,
 				DE2FF7B11B6689E1001898B4 /* AppDelegate.m */,
-				DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */,
-				DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */,
 				DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */,
 				DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */,
 				DE2FF7B51B6689E1001898B4 /* Images.xcassets */,
@@ -120,8 +138,6 @@
 				DE2FF7F31B673985001898B4 /* TextPanelController.h */,
 				DE2FF7F41B673985001898B4 /* TextPanelController.m */,
 				DE2FF7F51B673985001898B4 /* TextPanelController.xib */,
-				DE2FF7F81B674467001898B4 /* HotKeyTextField.h */,
-				DE2FF7F91B674467001898B4 /* HotKeyTextField.m */,
 				DE2FF8031B67F949001898B4 /* PreferenceManager.h */,
 				DE2FF8041B67F949001898B4 /* PreferenceManager.m */,
 				DE2FF80B1B686EBC001898B4 /* TextPanel.h */,
@@ -135,6 +151,7 @@
 			children = (
 				DE2FF7AF1B6689E1001898B4 /* Info.plist */,
 				DE2FF7B31B6689E1001898B4 /* main.m */,
+				DE2FF81A1B68E13D001898B4 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE2FF7C81B6689E1001898B4 /* Build configuration list for PBXNativeTarget "Pete" */;
 			buildPhases = (
+				231DBF2F0EAA306805F7602D /* Check Pods Manifest.lock */,
 				DE2FF7A71B6689E1001898B4 /* Sources */,
 				DE2FF7A81B6689E1001898B4 /* Frameworks */,
 				DE2FF7A91B6689E1001898B4 /* Resources */,
+				D3484998A0FAD5BE36FD39A8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +256,7 @@
 				DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */,
 				DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */,
 				DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */,
+				DE2FF81B1B68E13D001898B4 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +269,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		231DBF2F0EAA306805F7602D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3484998A0FAD5BE36FD39A8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pete/Pods-Pete-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE2FF7A71B6689E1001898B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -257,12 +310,10 @@
 				DE2FF8051B67F949001898B4 /* PreferenceManager.m in Sources */,
 				DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */,
 				DE2FF80D1B686EBC001898B4 /* TextPanel.m in Sources */,
-				DE2FF7FA1B674467001898B4 /* HotKeyTextField.m in Sources */,
 				DE2FF8001B675170001898B4 /* MainWindow.m in Sources */,
 				DE2FF7F21B672E6F001898B4 /* TextPanelView.m in Sources */,
 				DE2FF7B41B6689E1001898B4 /* main.m in Sources */,
 				DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */,
-				DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */,
 				DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +417,7 @@
 		};
 		DE2FF7C91B6689E1001898B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 206C73EE587EF50BC07299A3 /* Pods-Pete.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -378,6 +430,7 @@
 		};
 		DE2FF7CA1B6689E1001898B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 925C8117DF6DCE4C98540F55 /* Pods-Pete.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

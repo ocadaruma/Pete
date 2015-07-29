@@ -7,13 +7,12 @@
 //
 
 #import "MainWindow.h"
-#import "HotKeyManager.h"
 #import "KeyCodeConverter.h"
 #import "PreferenceManager.h"
+//#import <MASShortcut/Shortcut.h>
 
 @interface MainWindow ()
 
-@property (weak) IBOutlet NSTextField *hotKeyTextField;
 @property (weak) IBOutlet NSColorWell *colorWell;
 @property (weak) IBOutlet NSSlider *slider;
 
@@ -21,40 +20,9 @@
 
 @implementation MainWindow
 
-- (void)intercept:(NSEvent *)theEvent {
-  id firstResponder = (id)self.firstResponder;
-  if ([firstResponder respondsToSelector:@selector(delegate)] &&
-      [firstResponder delegate] == _hotKeyTextField) {
-    if (NSEventMaskFromType(theEvent.type) & (NSKeyDownMask | NSKeyUpMask | NSFlagsChangedMask)) {
-      NSString* hotKeyString = stringOfModifier(theEvent.modifierFlags);
-      NSString* keyStr = stringOfKeyCode(@(theEvent.keyCode));
-      _hotKeyTextField.placeholderString = hotKeyString;
-
-      if (hotKeyString.length > 0 && keyStr){
-        _hotKeyTextField.stringValue = [hotKeyString stringByAppendingString:keyStr];
-        HotKey hotKey;
-        hotKey.modifier = theEvent.modifierFlags;
-        hotKey.keyCode = theEvent.keyCode;
-        [PreferenceManager sharedManager].hotKey = hotKey;
-        [[HotKeyManager sharedManager] unregisterHotKey];
-        [[HotKeyManager sharedManager] registerHotKeyCode:hotKey.keyCode withModifier:hotKey.modifier];
-      }
-    }
-  }
-
-  [super sendEvent:theEvent];
-}
-
-- (void)sendEvent:(NSEvent *)theEvent {
-  [self intercept:theEvent];
-}
-
 - (void)commonInit {
   _colorWell.color = [PreferenceManager sharedManager].backgroundColor;
   _slider.floatValue = [PreferenceManager sharedManager].opacity;
-
-  HotKey hotKey = [PreferenceManager sharedManager].hotKey;
-  _hotKeyTextField.stringValue = [stringOfModifier(hotKey.modifier) stringByAppendingString:stringOfKeyCode(@(hotKey.keyCode))];
 }
 
 - (void)awakeFromNib {
