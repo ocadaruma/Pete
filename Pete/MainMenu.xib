@@ -68,7 +68,10 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="dtX-iT-sQ5"/>
                         </constraints>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" numberOfTickMarks="5" sliderType="linear" id="H6M-1u-39z"/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="below" numberOfTickMarks="5" sliderType="linear" id="H6M-1u-39z"/>
+                        <connections>
+                            <action selector="opacityChange:" target="QvC-M9-y7g" id="A32-3P-wnT"/>
+                        </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MIZ-QV-7C4">
                         <rect key="frame" x="18" y="102" width="104" height="20"/>
@@ -89,6 +92,9 @@
                             <constraint firstAttribute="height" constant="20" id="rCt-KC-ZPW"/>
                         </constraints>
                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="colorChange:" target="QvC-M9-y7g" id="Ci0-QE-WdW"/>
+                        </connections>
                     </colorWell>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rNO-HH-HWW">
                         <rect key="frame" x="98" y="142" width="52" height="52"/>
@@ -117,7 +123,9 @@
                 </constraints>
             </view>
             <connections>
+                <outlet property="colorWell" destination="K9S-Fx-q4z" id="tj0-Et-JxZ"/>
                 <outlet property="hotKeyTextField" destination="50b-3U-c7L" id="B3f-WX-UJ4"/>
+                <outlet property="slider" destination="fLV-Jy-2Z0" id="wWZ-D8-ooM"/>
             </connections>
             <point key="canvasLocation" x="237" y="197"/>
         </window>

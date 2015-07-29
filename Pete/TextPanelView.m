@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Haruki Okada. All rights reserved.
 //
 
-#import "TextWindowView.h"
+#import "TextPanelView.h"
 
-@implementation TextWindowView
+@implementation TextPanelView
 
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent {
   return YES;

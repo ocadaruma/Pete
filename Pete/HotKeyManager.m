@@ -7,7 +7,6 @@
 //
 
 #import "HotKeyManager.h"
-#import <Carbon/Carbon.h>
 
 static const NSUInteger kEventHotKeyPressedSubtype = 6;
 
@@ -15,13 +14,13 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef, EventRef, void *);
 
 @interface HotKeyManager ()
 
-@property (nonatomic) NSMutableDictionary* targetDict;
+@property (nonatomic) EventHotKeyRef currentHotKeyRef;
 
 @end
 
 @implementation HotKeyManager
 
-- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(NSEvent *))handler {
+- (void)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier {
   static UInt32 _id = 0;
 
   OSStatus err;
@@ -40,27 +39,24 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef, EventRef, void *);
 
   err = RegisterEventHotKey(keyCode, modifier, keyId, GetApplicationEventTarget(), 0, &hotKeyRef);
   if (err != noErr) {
-    return NULL;
+    return;
   }
 
-  _targetDict[@((int)hotKeyRef)] = [handler copy];
-
-  return (void *)hotKeyRef;
+  self.currentHotKeyRef = hotKeyRef;
 }
 
-- (void)unregisterHotKey:(void *)hotKeyRef {
-  OSStatus err;
-
-  err = UnregisterEventHotKey(hotKeyRef);
-  [_targetDict removeObjectForKey:@((int)hotKeyRef)];
+- (void)unregisterHotKey {
+  if (_currentHotKeyRef) {
+    UnregisterEventHotKey(_currentHotKeyRef);
+  }
+  self.currentHotKeyRef = NULL;
+  self.handler = nil;
 }
 
 - (instancetype)init {
   self = [super init];
 
   if (self) {
-    self.targetDict = [NSMutableDictionary dictionary];
-
     EventTypeSpec eventTypeSpecList[] ={
       { kEventClassKeyboard, kEventHotKeyPressed }
     };
@@ -92,10 +88,8 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef nextHandler, EventRef an
   HotKeyManager* app = (__bridge HotKeyManager*)userData;
 
   if (event.type == NSSystemDefined && event.subtype == kEventHotKeyPressedSubtype) {
-    EventHotKeyRef hotKeyRef = (EventHotKeyRef)event.data1;
-    void(^handler)(NSEvent *) = app.targetDict[@((int)hotKeyRef)];
-    if (handler) {
-      handler(event);
+    if (app.handler) {
+      app.handler(event);
     }
   }
 

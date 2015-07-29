@@ -45,3 +45,13 @@ NSString* stringOfKeyCode(NSNumber* code) {
 
   return _codeKeyMap[code];
 }
+
+NSString* stringOfModifier(NSEventModifierFlags modifier) {
+  NSMutableString* string = [NSMutableString string];
+  if (modifier & NSControlKeyMask) [string appendString:@"^"];
+  if (modifier & NSShiftKeyMask) [string appendString:@"⇧"];
+  if (modifier & NSCommandKeyMask) [string appendString:@"⌘"];
+  if (modifier & NSAlternateKeyMask) [string appendString:@"⌥"];
+
+  return string;
+}

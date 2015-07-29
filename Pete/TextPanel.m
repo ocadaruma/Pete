@@ -1,20 +1,21 @@
 //
-//  TextWindow.m
+//  TextPanel.m
 //  Pete
 //
-//  Created by hokada on 7/28/15.
+//  Created by hokada on 7/29/15.
 //  Copyright (c) 2015 Haruki Okada. All rights reserved.
 //
 
-#import "TextWindow.h"
+#import "TextPanel.h"
 
-@interface TextWindow ()
+@interface TextPanel ()
 
 @property (nonatomic) NSPoint previousPoint;
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 
 @end
 
-@implementation TextWindow
+@implementation TextPanel
 
 - (void)mouseDown:(NSEvent *)theEvent {
   self.previousPoint = [theEvent locationInWindow];
@@ -31,16 +32,32 @@
          animate:NO];
 }
 
-//- (void)keyDown:(NSEvent *)theEvent {
-//
-//}
-
 - (void)commonInit {
   [self setLevel:NSFloatingWindowLevel];
-  [self setBackgroundColor:[NSColor whiteColor]];
   [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
-  [self setStyleMask:NSHUDWindowMask];
-//  [self setStyleMask:NSNonactivatingPanelMask];
+}
+
+- (BOOL)performKeyEquivalent:(NSEvent *)theEvent {
+  if (theEvent.modifierFlags & NSCommandKeyMask) {
+    if ([theEvent.characters isEqualToString:@"w"]) {
+      [self cancelOperation:nil];
+      return YES;
+    } else if ([theEvent.characters isEqualToString:@"a"]) {
+      [_textView selectAll:nil];
+      return YES;
+    } else if ([theEvent.characters isEqualToString:@"c"]) {
+      [_textView copy:nil];
+      return YES;
+    } else {
+      return [super performKeyEquivalent:theEvent];
+    }
+  } else {
+    return [super performKeyEquivalent:theEvent];
+  }
+}
+
+- (void)cancelOperation:(id)sender {
+  [self close];
 }
 
 - (BOOL)canBecomeKeyWindow {
@@ -83,7 +100,7 @@
   if (self) {
     [self commonInit];
   }
-
+  
   return self;
 }
 

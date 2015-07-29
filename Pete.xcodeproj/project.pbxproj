@@ -10,17 +10,17 @@
 		DE2FF7B21B6689E1001898B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B11B6689E1001898B4 /* AppDelegate.m */; };
 		DE2FF7B41B6689E1001898B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7B31B6689E1001898B4 /* main.m */; };
 		DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7B51B6689E1001898B4 /* Images.xcassets */; };
-		DE2FF7C51B6689E1001898B4 /* PeteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7C41B6689E1001898B4 /* PeteTests.m */; };
 		DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */; };
 		DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */; };
 		DE2FF7D51B668CB9001898B4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2FF7D41B668CB9001898B4 /* Carbon.framework */; };
-		DE2FF7EC1B6714EB001898B4 /* TextWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7EB1B6714EB001898B4 /* TextWindow.m */; };
-		DE2FF7F21B672E6F001898B4 /* TextWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F11B672E6F001898B4 /* TextWindowView.m */; };
-		DE2FF7F61B673985001898B4 /* TextWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextWindowController.m */; };
-		DE2FF7F71B673985001898B4 /* TextWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextWindowController.xib */; };
+		DE2FF7F21B672E6F001898B4 /* TextPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F11B672E6F001898B4 /* TextPanelView.m */; };
+		DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextPanelController.m */; };
+		DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextPanelController.xib */; };
 		DE2FF7FA1B674467001898B4 /* HotKeyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F91B674467001898B4 /* HotKeyTextField.m */; };
 		DE2FF8001B675170001898B4 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7FF1B675170001898B4 /* MainWindow.m */; };
 		DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF8011B67F2F3001898B4 /* MainMenu.xib */; };
+		DE2FF8051B67F949001898B4 /* PreferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF8041B67F949001898B4 /* PreferenceManager.m */; };
+		DE2FF80D1B686EBC001898B4 /* TextPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF80C1B686EBC001898B4 /* TextPanel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,24 +42,25 @@
 		DE2FF7B51B6689E1001898B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE2FF7BE1B6689E1001898B4 /* PeteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FF7C31B6689E1001898B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE2FF7C41B6689E1001898B4 /* PeteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeteTests.m; sourceTree = "<group>"; };
 		DE2FF7CE1B668C35001898B4 /* HotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyManager.h; sourceTree = "<group>"; };
 		DE2FF7CF1B668C35001898B4 /* HotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyManager.m; sourceTree = "<group>"; };
 		DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCodeConverter.h; sourceTree = "<group>"; };
 		DE2FF7D21B668C42001898B4 /* KeyCodeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCodeConverter.m; sourceTree = "<group>"; };
 		DE2FF7D41B668CB9001898B4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		DE2FF7EA1B6714EB001898B4 /* TextWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextWindow.h; sourceTree = "<group>"; };
-		DE2FF7EB1B6714EB001898B4 /* TextWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextWindow.m; sourceTree = "<group>"; };
-		DE2FF7F01B672E6F001898B4 /* TextWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextWindowView.h; sourceTree = "<group>"; };
-		DE2FF7F11B672E6F001898B4 /* TextWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextWindowView.m; sourceTree = "<group>"; };
-		DE2FF7F31B673985001898B4 /* TextWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextWindowController.h; sourceTree = "<group>"; };
-		DE2FF7F41B673985001898B4 /* TextWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextWindowController.m; sourceTree = "<group>"; };
-		DE2FF7F51B673985001898B4 /* TextWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextWindowController.xib; sourceTree = "<group>"; };
+		DE2FF7F01B672E6F001898B4 /* TextPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanelView.h; sourceTree = "<group>"; };
+		DE2FF7F11B672E6F001898B4 /* TextPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanelView.m; sourceTree = "<group>"; };
+		DE2FF7F31B673985001898B4 /* TextPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanelController.h; sourceTree = "<group>"; };
+		DE2FF7F41B673985001898B4 /* TextPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanelController.m; sourceTree = "<group>"; };
+		DE2FF7F51B673985001898B4 /* TextPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextPanelController.xib; sourceTree = "<group>"; };
 		DE2FF7F81B674467001898B4 /* HotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyTextField.h; sourceTree = "<group>"; };
 		DE2FF7F91B674467001898B4 /* HotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyTextField.m; sourceTree = "<group>"; };
 		DE2FF7FE1B675170001898B4 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		DE2FF7FF1B675170001898B4 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
 		DE2FF8011B67F2F3001898B4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		DE2FF8031B67F949001898B4 /* PreferenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceManager.h; sourceTree = "<group>"; };
+		DE2FF8041B67F949001898B4 /* PreferenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceManager.m; sourceTree = "<group>"; };
+		DE2FF80B1B686EBC001898B4 /* TextPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanel.h; sourceTree = "<group>"; };
+		DE2FF80C1B686EBC001898B4 /* TextPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,15 +115,17 @@
 				DE2FF7FE1B675170001898B4 /* MainWindow.h */,
 				DE2FF7FF1B675170001898B4 /* MainWindow.m */,
 				DE2FF7AE1B6689E1001898B4 /* Supporting Files */,
-				DE2FF7EA1B6714EB001898B4 /* TextWindow.h */,
-				DE2FF7EB1B6714EB001898B4 /* TextWindow.m */,
-				DE2FF7F01B672E6F001898B4 /* TextWindowView.h */,
-				DE2FF7F11B672E6F001898B4 /* TextWindowView.m */,
-				DE2FF7F31B673985001898B4 /* TextWindowController.h */,
-				DE2FF7F41B673985001898B4 /* TextWindowController.m */,
-				DE2FF7F51B673985001898B4 /* TextWindowController.xib */,
+				DE2FF7F01B672E6F001898B4 /* TextPanelView.h */,
+				DE2FF7F11B672E6F001898B4 /* TextPanelView.m */,
+				DE2FF7F31B673985001898B4 /* TextPanelController.h */,
+				DE2FF7F41B673985001898B4 /* TextPanelController.m */,
+				DE2FF7F51B673985001898B4 /* TextPanelController.xib */,
 				DE2FF7F81B674467001898B4 /* HotKeyTextField.h */,
 				DE2FF7F91B674467001898B4 /* HotKeyTextField.m */,
+				DE2FF8031B67F949001898B4 /* PreferenceManager.h */,
+				DE2FF8041B67F949001898B4 /* PreferenceManager.m */,
+				DE2FF80B1B686EBC001898B4 /* TextPanel.h */,
+				DE2FF80C1B686EBC001898B4 /* TextPanel.m */,
 			);
 			path = Pete;
 			sourceTree = "<group>";
@@ -139,7 +142,6 @@
 		DE2FF7C11B6689E1001898B4 /* PeteTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE2FF7C41B6689E1001898B4 /* PeteTests.m */,
 				DE2FF7C21B6689E1001898B4 /* Supporting Files */,
 			);
 			path = PeteTests;
@@ -232,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2FF7F71B673985001898B4 /* TextWindowController.xib in Resources */,
+				DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */,
 				DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */,
 				DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */,
 			);
@@ -252,11 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2FF7F61B673985001898B4 /* TextWindowController.m in Sources */,
+				DE2FF8051B67F949001898B4 /* PreferenceManager.m in Sources */,
+				DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */,
+				DE2FF80D1B686EBC001898B4 /* TextPanel.m in Sources */,
 				DE2FF7FA1B674467001898B4 /* HotKeyTextField.m in Sources */,
 				DE2FF8001B675170001898B4 /* MainWindow.m in Sources */,
-				DE2FF7F21B672E6F001898B4 /* TextWindowView.m in Sources */,
-				DE2FF7EC1B6714EB001898B4 /* TextWindow.m in Sources */,
+				DE2FF7F21B672E6F001898B4 /* TextPanelView.m in Sources */,
 				DE2FF7B41B6689E1001898B4 /* main.m in Sources */,
 				DE2FF7D31B668C42001898B4 /* KeyCodeConverter.m in Sources */,
 				DE2FF7D01B668C35001898B4 /* HotKeyManager.m in Sources */,
@@ -268,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2FF7C51B6689E1001898B4 /* PeteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

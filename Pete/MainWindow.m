@@ -9,11 +9,13 @@
 #import "MainWindow.h"
 #import "HotKeyManager.h"
 #import "KeyCodeConverter.h"
+#import "PreferenceManager.h"
 
 @interface MainWindow ()
 
 @property (weak) IBOutlet NSTextField *hotKeyTextField;
-@property (weak) IBOutlet NSButton *button;
+@property (weak) IBOutlet NSColorWell *colorWell;
+@property (weak) IBOutlet NSSlider *slider;
 
 @end
 
@@ -24,19 +26,13 @@
   if ([firstResponder respondsToSelector:@selector(delegate)] &&
       [firstResponder delegate] == _hotKeyTextField) {
     if (NSEventMaskFromType(theEvent.type) & (NSKeyDownMask | NSKeyUpMask | NSFlagsChangedMask)) {
-      NSMutableString* hotKeyString = [NSMutableString string];
-      if (theEvent.modifierFlags & NSControlKeyMask) [hotKeyString appendString:@"^"];
-      if (theEvent.modifierFlags & NSShiftKeyMask) [hotKeyString appendString:@"⇧"];
-      if (theEvent.modifierFlags & NSCommandKeyMask) [hotKeyString appendString:@"⌘"];
-      if (theEvent.modifierFlags & NSAlternateKeyMask) [hotKeyString appendString:@"⌥"];
-
+      NSString* hotKeyString = stringOfModifier(theEvent.modifierFlags);
       NSString* keyStr = stringOfKeyCode(@(theEvent.keyCode));
       _hotKeyTextField.placeholderString = hotKeyString;
 
       if (hotKeyString.length > 0 && keyStr){
-        [hotKeyString appendString:keyStr];
         [self makeFirstResponder:nil];
-        _hotKeyTextField.stringValue = hotKeyString;
+        _hotKeyTextField.stringValue = [hotKeyString stringByAppendingString:keyStr];
       }
     }
   }
@@ -51,6 +47,17 @@
 }
 
 - (void)commonInit {
+  self.initialFirstResponder = _colorWell;
+  _colorWell.color = [PreferenceManager sharedManager].backgroundColor;
+  _slider.floatValue = [PreferenceManager sharedManager].opacity;
+
+  HotKey hotKey = [PreferenceManager sharedManager].hotKey;
+  _hotKeyTextField.stringValue = [stringOfModifier(hotKey.modifier) stringByAppendingString:stringOfKeyCode(@(hotKey.keyCode))];
+}
+
+- (void)awakeFromNib {
+  [super awakeFromNib];
+  [self commonInit];
 }
 
 - (instancetype)init {
@@ -96,6 +103,16 @@
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent {
   [self intercept:theEvent equivalent:YES];
   return [super performKeyEquivalent:theEvent];
+}
+
+- (IBAction)colorChange:(id)sender {
+  NSColorWell* colorWell = sender;
+  [PreferenceManager sharedManager].backgroundColor = colorWell.color;
+}
+
+- (IBAction)opacityChange:(id)sender {
+  NSSlider* slider = sender;
+  [PreferenceManager sharedManager].opacity = slider.floatValue;
 }
 
 @end

@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
 
 @interface HotKeyManager : NSObject
 
-- (void *)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier handler:(void(^)(NSEvent *))handler;
-- (void)unregisterHotKey:(void *)hotKeyRef;
+@property (copy) void(^handler)(NSEvent *);
+
+- (void)registerHotKeyCode:(UInt32)keyCode withModifier:(UInt32)keyModifier;
+- (void)unregisterHotKey;
 + (instancetype)sharedManager;
 
 @end

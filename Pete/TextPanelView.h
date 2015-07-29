@@ -1,5 +1,5 @@
 //
-//  TextWindow.h
+//  TextWindowView.h
 //  Pete
 //
 //  Created by hokada on 7/28/15.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TextWindow : NSWindow
+@interface TextPanelView : NSView
 
 @end

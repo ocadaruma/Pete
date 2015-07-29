@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 extern NSNumber* keyCodeOfString(NSString* str);
 extern NSString* stringOfKeyCode(NSNumber* code);
+extern NSString* stringOfModifier(NSEventModifierFlags modifier);

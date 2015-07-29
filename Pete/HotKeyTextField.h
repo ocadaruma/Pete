@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-IB_DESIGNABLE
 @interface HotKeyTextField : NSTextField
 
 @end
