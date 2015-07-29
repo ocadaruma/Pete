@@ -66,6 +66,7 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
 
     ctrl.window.delegate = self;
     [ctrl showWindow:nil];
+    [NSApp activateIgnoringOtherApps:YES];
   }];
 }
 
