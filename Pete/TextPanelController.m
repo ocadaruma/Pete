@@ -19,20 +19,10 @@
 
 - (void)windowDidLoad {
   [super windowDidLoad];
-}
 
-- (void)setString:(NSString *)string {
-  _string = string;
-  if (_string) {
-    _textView.string = _string;
-  }
-}
-
-- (void)setAttributedString:(NSAttributedString *)attributedString {
-  _attributedString = attributedString;
-  if (_attributedString) {
-    [_textView.textStorage appendAttributedString:_attributedString];
-  }
+  [_textView paste:nil];
+  [_textView scrollToBeginningOfDocument:nil];
+  _textView.editable = NO;
 }
 
 + (instancetype)controller {

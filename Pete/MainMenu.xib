@@ -7,146 +7,191 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+                <outlet property="delegate" destination="0Q2-sQ-49r" id="2dY-hA-gTF"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="0Q2-sQ-49r" customClass="AppDelegate">
             <connections>
-                <outlet property="shortcutView" destination="NYY-BQ-VqS" id="3Qz-oA-prl"/>
-                <outlet property="statusMenu" destination="rzx-Iu-Xxs" id="M1O-Fw-adS"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="shortcutView" destination="YWL-W6-k8R" id="lI2-aK-HHh"/>
+                <outlet property="statusMenu" destination="NQs-z4-ZA4" id="ZlR-0W-C47"/>
+                <outlet property="window" destination="okl-Pe-Zoo" id="BNL-U1-nRJ"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <window title="Pete" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="MainWindow">
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="Pete" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Pete" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="Quit NewApplication" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="dMs-cI-mzQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="bib-Uj-vzu">
+                        <items>
+                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="5QF-Oa-p0T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="W48-6f-4Dl">
+                        <items>
+                            <menuItem title="Copy" keyEquivalent="c" id="x3v-GG-iWU">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="G1f-GL-Joy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="Ruw-6m-B2m">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="VNm-Mi-diN"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="Pete" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="okl-Pe-Zoo" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="298" height="202"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
+            <view key="contentView" id="35T-vR-Rp7">
                 <rect key="frame" x="0.0" y="0.0" width="298" height="202"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="47s-4z-Ck3">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-Ix-79o">
                         <rect key="frame" x="18" y="62" width="104" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="39Q-U3-sjH"/>
-                            <constraint firstAttribute="width" constant="100" id="4iS-us-KQd"/>
+                            <constraint firstAttribute="width" constant="100" id="DVj-FT-pPa"/>
+                            <constraint firstAttribute="height" constant="20" id="Ja5-cG-Hs4"/>
                         </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="jWx-as-Wgc">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="n1H-MC-JCp">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-Hn-wbK">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eqq-dR-X93">
                         <rect key="frame" x="18" y="22" width="104" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="X5B-ph-GY7"/>
-                            <constraint firstAttribute="height" constant="20" id="oNZ-kb-bv7"/>
+                            <constraint firstAttribute="width" constant="100" id="3YJ-HE-m2c"/>
+                            <constraint firstAttribute="height" constant="20" id="vH2-JA-7Wp"/>
                         </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Opacity" id="hBl-CZ-ZRZ">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Opacity" id="NWh-gt-MFD">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fLV-Jy-2Z0">
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C4o-Jr-yOE">
                         <rect key="frame" x="126" y="19" width="154" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="150" id="dtX-iT-sQ5"/>
+                            <constraint firstAttribute="width" constant="150" id="Iba-x7-My8"/>
                         </constraints>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="below" numberOfTickMarks="5" sliderType="linear" id="H6M-1u-39z"/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="below" numberOfTickMarks="5" sliderType="linear" id="D5r-2a-6r4"/>
                         <connections>
-                            <action selector="opacityChange:" target="QvC-M9-y7g" id="A32-3P-wnT"/>
+                            <action selector="opacityChange:" target="0Q2-sQ-49r" id="R62-Hh-pXC"/>
                         </connections>
                     </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MIZ-QV-7C4">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gro-D5-cdZ">
                         <rect key="frame" x="18" y="102" width="104" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="39d-g6-nxc"/>
-                            <constraint firstAttribute="width" constant="100" id="uS5-6y-aDL"/>
+                            <constraint firstAttribute="height" constant="20" id="JqP-gp-ax0"/>
+                            <constraint firstAttribute="width" constant="100" id="ZFu-eD-HNo"/>
                         </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HotKey" id="aXE-9h-zeg">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HotKey" id="sDo-iB-aF8">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="K9S-Fx-q4z">
+                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="Qnr-Vs-tI6">
                         <rect key="frame" x="128" y="62" width="80" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="b3E-67-leQ"/>
-                            <constraint firstAttribute="height" constant="20" id="rCt-KC-ZPW"/>
+                            <constraint firstAttribute="height" constant="20" id="6UW-qn-PJU"/>
+                            <constraint firstAttribute="width" constant="80" id="wL7-Sd-IDT"/>
                         </constraints>
                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <action selector="colorChange:" target="QvC-M9-y7g" id="Ci0-QE-WdW"/>
+                            <action selector="colorChange:" target="0Q2-sQ-49r" id="GmI-hZ-b8m"/>
                         </connections>
                     </colorWell>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rNO-HH-HWW">
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0F-9e-Izc">
                         <rect key="frame" x="123" y="142" width="52" height="52"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="52" id="6gj-zU-0D5"/>
-                            <constraint firstAttribute="height" constant="52" id="Rhg-bQ-wVK"/>
+                            <constraint firstAttribute="height" constant="52" id="Bdk-b2-35w"/>
+                            <constraint firstAttribute="width" constant="52" id="Tqf-vY-LWT"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="NQj-e2-r9e"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="qLw-NC-Yp0"/>
                     </imageView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NYY-BQ-VqS" customClass="MASShortcutView">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="YWL-W6-k8R" customClass="MASShortcutView">
                         <rect key="frame" x="128" y="103" width="150" height="19"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="150" id="ARP-JY-HBo"/>
-                            <constraint firstAttribute="height" constant="19" id="LgJ-xV-HwS"/>
+                            <constraint firstAttribute="height" constant="19" id="lkm-uZ-GzF"/>
+                            <constraint firstAttribute="width" constant="150" id="zid-zI-cb4"/>
                         </constraints>
                     </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7v5-Hn-wbK" firstAttribute="top" secondItem="47s-4z-Ck3" secondAttribute="bottom" constant="20" id="67Z-Ef-9CB"/>
-                    <constraint firstItem="7v5-Hn-wbK" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="8VB-GY-zel"/>
-                    <constraint firstItem="7v5-Hn-wbK" firstAttribute="centerY" secondItem="fLV-Jy-2Z0" secondAttribute="centerY" constant="-1" id="9XS-FA-xGR"/>
-                    <constraint firstItem="47s-4z-Ck3" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="HWv-fn-bje"/>
-                    <constraint firstItem="rNO-HH-HWW" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="Lbc-ow-n8f"/>
-                    <constraint firstItem="NYY-BQ-VqS" firstAttribute="leading" secondItem="MIZ-QV-7C4" secondAttribute="trailing" constant="8" id="M8B-VL-uR9"/>
-                    <constraint firstItem="NYY-BQ-VqS" firstAttribute="centerY" secondItem="MIZ-QV-7C4" secondAttribute="centerY" constant="-0.5" id="MZJ-zp-lMF"/>
-                    <constraint firstAttribute="centerX" secondItem="rNO-HH-HWW" secondAttribute="centerX" id="NLb-XG-072"/>
-                    <constraint firstItem="MIZ-QV-7C4" firstAttribute="top" secondItem="rNO-HH-HWW" secondAttribute="bottom" constant="20" id="P8g-VJ-Z0h"/>
-                    <constraint firstItem="47s-4z-Ck3" firstAttribute="top" secondItem="MIZ-QV-7C4" secondAttribute="bottom" constant="20" id="Xwa-r1-47x"/>
-                    <constraint firstItem="47s-4z-Ck3" firstAttribute="centerY" secondItem="K9S-Fx-q4z" secondAttribute="centerY" id="auh-9c-x5O"/>
-                    <constraint firstItem="fLV-Jy-2Z0" firstAttribute="leading" secondItem="7v5-Hn-wbK" secondAttribute="trailing" constant="8" id="m2Y-HT-TEu"/>
-                    <constraint firstItem="MIZ-QV-7C4" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="mbC-hd-RHj"/>
-                    <constraint firstItem="K9S-Fx-q4z" firstAttribute="leading" secondItem="47s-4z-Ck3" secondAttribute="trailing" constant="8" id="w4I-xO-KdK"/>
+                    <constraint firstAttribute="centerX" secondItem="e0F-9e-Izc" secondAttribute="centerX" id="9Pv-Rq-uxX"/>
+                    <constraint firstItem="eqq-dR-X93" firstAttribute="centerY" secondItem="C4o-Jr-yOE" secondAttribute="centerY" constant="-1" id="Ava-O2-Whd"/>
+                    <constraint firstItem="eTV-Ix-79o" firstAttribute="leading" secondItem="35T-vR-Rp7" secondAttribute="leading" constant="20" id="Dkv-6b-82V"/>
+                    <constraint firstItem="YWL-W6-k8R" firstAttribute="centerY" secondItem="Gro-D5-cdZ" secondAttribute="centerY" constant="-0.5" id="S11-t0-ONY"/>
+                    <constraint firstItem="e0F-9e-Izc" firstAttribute="top" secondItem="35T-vR-Rp7" secondAttribute="top" constant="8" id="Ycl-BY-3ev"/>
+                    <constraint firstItem="Qnr-Vs-tI6" firstAttribute="leading" secondItem="eTV-Ix-79o" secondAttribute="trailing" constant="8" id="jXw-LL-RAe"/>
+                    <constraint firstItem="Gro-D5-cdZ" firstAttribute="leading" secondItem="35T-vR-Rp7" secondAttribute="leading" constant="20" id="k4z-Fo-JLV"/>
+                    <constraint firstItem="YWL-W6-k8R" firstAttribute="leading" secondItem="Gro-D5-cdZ" secondAttribute="trailing" constant="8" id="kFY-aq-T1e"/>
+                    <constraint firstItem="eqq-dR-X93" firstAttribute="top" secondItem="eTV-Ix-79o" secondAttribute="bottom" constant="20" id="kJo-1x-dHz"/>
+                    <constraint firstItem="eqq-dR-X93" firstAttribute="leading" secondItem="35T-vR-Rp7" secondAttribute="leading" constant="20" id="pY4-A2-dXP"/>
+                    <constraint firstItem="C4o-Jr-yOE" firstAttribute="leading" secondItem="eqq-dR-X93" secondAttribute="trailing" constant="8" id="rNI-94-FTN"/>
+                    <constraint firstItem="Gro-D5-cdZ" firstAttribute="top" secondItem="e0F-9e-Izc" secondAttribute="bottom" constant="20" id="rnT-Fw-WZ5"/>
+                    <constraint firstItem="eTV-Ix-79o" firstAttribute="centerY" secondItem="Qnr-Vs-tI6" secondAttribute="centerY" id="t1m-ND-6Zs"/>
+                    <constraint firstItem="eTV-Ix-79o" firstAttribute="top" secondItem="Gro-D5-cdZ" secondAttribute="bottom" constant="20" id="w1J-e2-9sJ"/>
                 </constraints>
             </view>
             <connections>
-                <outlet property="colorWell" destination="K9S-Fx-q4z" id="tj0-Et-JxZ"/>
-                <outlet property="slider" destination="fLV-Jy-2Z0" id="wWZ-D8-ooM"/>
+                <outlet property="colorWell" destination="Qnr-Vs-tI6" id="YGr-1I-0hS"/>
+                <outlet property="slider" destination="C4o-Jr-yOE" id="RxA-Uf-mfZ"/>
             </connections>
-            <point key="canvasLocation" x="262" y="197"/>
+            <point key="canvasLocation" x="455" y="130"/>
         </window>
-        <menu id="rzx-Iu-Xxs">
+        <menu id="NQs-z4-ZA4">
             <items>
-                <menuItem title="About Pete" id="3sS-CS-6k8">
+                <menuItem title="About Pete" id="bDK-bP-7KP">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="showAbout:" target="Voe-Tx-rLC" id="r8Q-ED-BFu"/>
+                        <action selector="showAbout:" target="0Q2-sQ-49r" id="R61-5P-woM"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="eLy-Db-9ky"/>
-                <menuItem title="Show Main Window" id="fDl-hN-yxL">
+                <menuItem isSeparatorItem="YES" id="NGy-l2-h3P"/>
+                <menuItem title="Show Main Window" id="EEE-wZ-XGQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="showMainWindow:" target="Voe-Tx-rLC" id="3KS-8o-4bJ"/>
+                        <action selector="showMainWindow:" target="0Q2-sQ-49r" id="zWM-1u-6Ze"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Quit Pete" keyEquivalent="q" id="zke-fv-fom">
+                <menuItem title="Quit Pete" keyEquivalent="q" id="Aux-h6-QIo">
                     <connections>
-                        <action selector="terminate:" target="-2" id="rCb-dV-dPc"/>
+                        <action selector="terminate:" target="-2" id="CmB-8L-xVx"/>
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="251" y="429.5"/>
+            <point key="canvasLocation" x="455" y="350.5"/>
         </menu>
     </objects>
     <resources>

@@ -69,14 +69,4 @@
   return self;
 }
 
-- (IBAction)colorChange:(id)sender {
-  NSColorWell* colorWell = sender;
-  [PreferenceManager sharedManager].backgroundColor = colorWell.color;
-}
-
-- (IBAction)opacityChange:(id)sender {
-  NSSlider* slider = sender;
-  [PreferenceManager sharedManager].opacity = slider.floatValue;
-}
-
 @end

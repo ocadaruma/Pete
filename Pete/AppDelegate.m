@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "TextPanelController.h"
 #import "KeyCodeConverter.h"
+#import "PreferenceManager.h"
+#import "TextPanel.h"
 #import <MASShortcut/Shortcut.h>
 
 static NSString *const kHotKeyPreferenceKey = @"HotKey";
@@ -49,23 +51,6 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
     TextPanelController* ctrl = [TextPanelController controller];
     [_panels addObject:ctrl.window];
 
-    NSPasteboard* pb = [NSPasteboard generalPasteboard];
-    NSData* data = nil;
-    if ((data = [pb dataForType:NSRTFPboardType])) {
-      NSAttributedString* str = [[NSAttributedString alloc] initWithRTF:data documentAttributes:nil];
-      ctrl.attributedString = str;
-    } else if ((data = [pb dataForType:NSHTMLPboardType])) {
-      NSAttributedString* str = [[NSAttributedString alloc] initWithData:data
-                                                                 options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                                           NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                                      documentAttributes:nil
-                                                                   error:nil];
-      ctrl.attributedString = str;
-    } else if ((data = [pb dataForType:NSStringPboardType])) {
-      NSString* str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-      ctrl.string = str;
-    }
-
     ctrl.window.delegate = self;
     [ctrl showWindow:nil];
     [NSApp activateIgnoringOtherApps:YES];
@@ -77,6 +62,22 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
        runningApplicationsWithBundleIdentifier:[NSBundle mainBundle].bundleIdentifier].count > 1) {
     [NSApp terminate:nil];
   }
+}
+
+- (IBAction)colorChange:(id)sender {
+  NSColorWell* colorWell = sender;
+  [PreferenceManager sharedManager].backgroundColor = colorWell.color;
+  [_panels enumerateObjectsUsingBlock:^(TextPanel* panel, BOOL *stop) {
+    [panel updateFromPreference];
+  }];
+}
+
+- (IBAction)opacityChange:(id)sender {
+  NSSlider* slider = sender;
+  [PreferenceManager sharedManager].opacity = slider.floatValue;
+  [_panels enumerateObjectsUsingBlock:^(TextPanel* panel, BOOL *stop) {
+    [panel updateFromPreference];
+  }];
 }
 
 - (void)windowWillClose:(NSNotification *)notification {

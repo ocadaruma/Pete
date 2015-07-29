@@ -50,11 +50,7 @@
     if ([theEvent.characters isEqualToString:@"w"]) {
       [self cancelOperation:nil];
       return YES;
-    } else if ([theEvent.characters isEqualToString:@"a"]) {
-      [_textView selectAll:nil];
-      return YES;
-    } else if ([theEvent.characters isEqualToString:@"c"]) {
-      [_textView copy:nil];
+    } else if ([theEvent.characters isEqualToString:@"q"]) {
       return YES;
     } else {
       return [super performKeyEquivalent:theEvent];

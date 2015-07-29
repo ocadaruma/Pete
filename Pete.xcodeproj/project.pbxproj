@@ -16,10 +16,10 @@
 		DE2FF7F61B673985001898B4 /* TextPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7F41B673985001898B4 /* TextPanelController.m */; };
 		DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF7F51B673985001898B4 /* TextPanelController.xib */; };
 		DE2FF8001B675170001898B4 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF7FF1B675170001898B4 /* MainWindow.m */; };
-		DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF8011B67F2F3001898B4 /* MainMenu.xib */; };
 		DE2FF8051B67F949001898B4 /* PreferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF8041B67F949001898B4 /* PreferenceManager.m */; };
 		DE2FF80D1B686EBC001898B4 /* TextPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2FF80C1B686EBC001898B4 /* TextPanel.m */; };
 		DE2FF81B1B68E13D001898B4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DE2FF81A1B68E13D001898B4 /* Credits.rtf */; };
+		DE5A3D781B69285400B657B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5A3D771B69285400B657B1 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +53,12 @@
 		DE2FF7F51B673985001898B4 /* TextPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextPanelController.xib; sourceTree = "<group>"; };
 		DE2FF7FE1B675170001898B4 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		DE2FF7FF1B675170001898B4 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
-		DE2FF8011B67F2F3001898B4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		DE2FF8031B67F949001898B4 /* PreferenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceManager.h; sourceTree = "<group>"; };
 		DE2FF8041B67F949001898B4 /* PreferenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceManager.m; sourceTree = "<group>"; };
 		DE2FF80B1B686EBC001898B4 /* TextPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPanel.h; sourceTree = "<group>"; };
 		DE2FF80C1B686EBC001898B4 /* TextPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPanel.m; sourceTree = "<group>"; };
 		DE2FF81A1B68E13D001898B4 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		DE5A3D771B69285400B657B1 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F0CF2D4BD814B59007B7A083 /* libPods-Pete.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pete.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,6 @@
 		DE2FF7AD1B6689E1001898B4 /* Pete */ = {
 			isa = PBXGroup;
 			children = (
-				DE2FF8011B67F2F3001898B4 /* MainMenu.xib */,
 				DE2FF7B01B6689E1001898B4 /* AppDelegate.h */,
 				DE2FF7B11B6689E1001898B4 /* AppDelegate.m */,
 				DE2FF7D11B668C42001898B4 /* KeyCodeConverter.h */,
@@ -140,6 +139,7 @@
 				DE2FF8041B67F949001898B4 /* PreferenceManager.m */,
 				DE2FF80B1B686EBC001898B4 /* TextPanel.h */,
 				DE2FF80C1B686EBC001898B4 /* TextPanel.m */,
+				DE5A3D771B69285400B657B1 /* MainMenu.xib */,
 			);
 			path = Pete;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 			files = (
 				DE2FF7F71B673985001898B4 /* TextPanelController.xib in Resources */,
 				DE2FF7B61B6689E1001898B4 /* Images.xcassets in Resources */,
-				DE2FF8021B67F2F3001898B4 /* MainMenu.xib in Resources */,
 				DE2FF81B1B68E13D001898B4 /* Credits.rtf in Resources */,
+				DE5A3D781B69285400B657B1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

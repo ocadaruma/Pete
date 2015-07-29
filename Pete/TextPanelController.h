@@ -10,9 +10,6 @@
 
 @interface TextPanelController : NSWindowController
 
-@property (nonatomic) NSString* string;
-@property (nonatomic) NSAttributedString* attributedString;
-
 + (instancetype)controller;
 
 @end
