@@ -26,6 +26,8 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  [self avoidDuplicateRunning];
+
   // Insert code here to initialize your application
   self.panels = [NSMutableSet set];
 
@@ -68,6 +70,13 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
     [ctrl showWindow:nil];
     [NSApp activateIgnoringOtherApps:YES];
   }];
+}
+
+- (void)avoidDuplicateRunning {
+  if ([NSRunningApplication
+       runningApplicationsWithBundleIdentifier:[NSBundle mainBundle].bundleIdentifier].count > 1) {
+    [NSApp terminate:nil];
+  }
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
