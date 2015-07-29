@@ -7,6 +7,7 @@
 //
 
 #import "TextPanel.h"
+#import "PreferenceManager.h"
 
 @interface TextPanel ()
 
@@ -35,6 +36,13 @@
 - (void)commonInit {
   [self setLevel:NSFloatingWindowLevel];
   [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
+  self.opaque = NO;
+  [self updateFromPreference];
+}
+
+- (void)updateFromPreference {
+  PreferenceManager* prefManager = [PreferenceManager sharedManager];
+  self.backgroundColor = [prefManager.backgroundColor colorWithAlphaComponent:prefManager.opacity];
 }
 
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent {

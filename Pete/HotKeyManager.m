@@ -50,7 +50,6 @@ static OSStatus globalHotkeyHandler(EventHandlerCallRef, EventRef, void *);
     UnregisterEventHotKey(_currentHotKeyRef);
   }
   self.currentHotKeyRef = NULL;
-  self.handler = nil;
 }
 
 - (instancetype)init {

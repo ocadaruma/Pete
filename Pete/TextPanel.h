@@ -10,4 +10,6 @@
 
 @interface TextPanel : NSPanel
 
+- (void)updateFromPreference;
+
 @end

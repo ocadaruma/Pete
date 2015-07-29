@@ -21,7 +21,7 @@
 
 @implementation MainWindow
 
-- (void)intercept:(NSEvent *)theEvent equivalent:(BOOL)equivalent {
+- (void)intercept:(NSEvent *)theEvent {
   id firstResponder = (id)self.firstResponder;
   if ([firstResponder respondsToSelector:@selector(delegate)] &&
       [firstResponder delegate] == _hotKeyTextField) {
@@ -31,23 +31,25 @@
       _hotKeyTextField.placeholderString = hotKeyString;
 
       if (hotKeyString.length > 0 && keyStr){
-        [self makeFirstResponder:nil];
         _hotKeyTextField.stringValue = [hotKeyString stringByAppendingString:keyStr];
+        HotKey hotKey;
+        hotKey.modifier = theEvent.modifierFlags;
+        hotKey.keyCode = theEvent.keyCode;
+        [PreferenceManager sharedManager].hotKey = hotKey;
+        [[HotKeyManager sharedManager] unregisterHotKey];
+        [[HotKeyManager sharedManager] registerHotKeyCode:hotKey.keyCode withModifier:hotKey.modifier];
       }
     }
   }
 
-  if (!equivalent) {
-    [super sendEvent:theEvent];
-  }
+  [super sendEvent:theEvent];
 }
 
 - (void)sendEvent:(NSEvent *)theEvent {
-  [self intercept:theEvent equivalent:NO];
+  [self intercept:theEvent];
 }
 
 - (void)commonInit {
-  self.initialFirstResponder = _colorWell;
   _colorWell.color = [PreferenceManager sharedManager].backgroundColor;
   _slider.floatValue = [PreferenceManager sharedManager].opacity;
 
@@ -98,11 +100,6 @@
   }
 
   return self;
-}
-
-- (BOOL)performKeyEquivalent:(NSEvent *)theEvent {
-  [self intercept:theEvent equivalent:YES];
-  return [super performKeyEquivalent:theEvent];
 }
 
 - (IBAction)colorChange:(id)sender {

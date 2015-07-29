@@ -14,15 +14,11 @@
 
 @implementation HotKeyTextField
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
-}
-
 - (void)commonInit {
   self.bezelStyle = NSTextFieldRoundedBezel;
   self.delegate = self;
+  NSTextView* fieldEditor = (NSTextView *)[self.window fieldEditor:YES forObject:self];
+  fieldEditor.insertionPointColor = [NSColor clearColor];
 }
 
 - (instancetype)init {
@@ -55,16 +51,20 @@
   return self;
 }
 
-- (BOOL)becomeFirstResponder {
-  BOOL status = [super becomeFirstResponder];
+- (void)_d {
 
-  if (status) {
-    self.placeholderString = @"";
-    self.stringValue = @"";
-  }
-
-  return status;
 }
+
+//- (BOOL)becomeFirstResponder {
+//  BOOL status = [super becomeFirstResponder];
+//
+//  if (status) {
+//    self.placeholderString = @"";
+//    self.stringValue = @"";
+//  }
+//
+//  return status;
+//}
 
 - (BOOL)textShouldBeginEditing:(NSText *)textObject {
   return NO;

@@ -19,10 +19,6 @@
 
 - (void)windowDidLoad {
   [super windowDidLoad];
-
-  PreferenceManager* prefManager = [PreferenceManager sharedManager];
-  self.window.backgroundColor = prefManager.backgroundColor;
-  self.window.alphaValue = prefManager.opacity;
 }
 
 - (void)setString:(NSString *)string {
