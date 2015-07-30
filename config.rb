@@ -71,3 +71,8 @@ configure :build do
   # set :http_prefix, "/Content/images/"
   activate :asset_host, :host => "/pete"
 end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'gh-pages'
+end
