@@ -21,6 +21,13 @@
   [super windowDidLoad];
 
   [_textView paste:nil];
+
+  [_textView.textStorage.mutableString replaceOccurrencesOfString:@"\u2028|\u2029"
+                                                       withString:@"\n"
+                                                          options:NSRegularExpressionSearch
+                                                            range:NSMakeRange(0, _textView.textStorage.mutableString.length)];
+
+
   [_textView scrollToBeginningOfDocument:nil];
   _textView.editable = NO;
 }
