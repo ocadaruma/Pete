@@ -8,6 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol TextPanelViewDelegate <NSObject>
+
+- (void)change;
+
+@end
+
 @interface TextPanelView : NSView
+
+@property (nonatomic, weak) IBOutlet id<TextPanelViewDelegate> delegate;
 
 @end

@@ -8,7 +8,15 @@
 
 #import "TextPanelView.h"
 
+@interface TextPanelView ()
+
+@end
+
 @implementation TextPanelView
+
+- (IBAction)change:(id)sender {
+  [_delegate change];
+}
 
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent {
   return YES;

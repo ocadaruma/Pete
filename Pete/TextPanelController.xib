@@ -57,11 +57,26 @@
                     <constraint firstAttribute="bottom" secondItem="TbQ-g0-1Vp" secondAttribute="bottom" constant="20" id="nYw-9c-9n6"/>
                     <constraint firstItem="TbQ-g0-1Vp" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="rs3-4x-gsC"/>
                 </constraints>
+                <connections>
+                    <outlet property="delegate" destination="F0z-JX-Cv5" id="lN4-VF-T2I"/>
+                    <outlet property="menu" destination="XCe-tL-hay" id="j5d-gC-nfM"/>
+                </connections>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
                 <outlet property="textView" destination="8hG-kB-EvM" id="rRS-pj-vXF"/>
             </connections>
         </window>
+        <menu id="XCe-tL-hay">
+            <items>
+                <menuItem title="Change color" id="wlc-Pu-qDG">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="change:" target="se5-gp-TjO" id="bfx-N2-hvi"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="375.5" y="670.5"/>
+        </menu>
     </objects>
 </document>

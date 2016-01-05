@@ -58,7 +58,7 @@ static NSString *const kSwapPanelHiddenHotKeyPreferenceKey = @"SwapPanelHiddenHo
     [_panels addObject:ctrl.window];
 
     ctrl.window.delegate = self;
-    [ctrl showWindow:nil];
+    [ctrl showWindow: nil];
     [NSApp activateIgnoringOtherApps:YES];
   }];
 

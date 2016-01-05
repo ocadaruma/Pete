@@ -7,9 +7,10 @@
 //
 
 #import "TextPanel.h"
+#import "TextPanelView.h"
 #import "PreferenceManager.h"
 
-@interface TextPanel ()
+@interface TextPanel ()<TextPanelViewDelegate, NSWindowDelegate>
 
 @property (nonatomic) NSPoint previousPoint;
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
@@ -17,6 +18,37 @@
 @end
 
 @implementation TextPanel
+
+- (void)change {
+  NSColorPanel* panel = [NSColorPanel sharedColorPanel];
+  panel.color = self.backgroundColor;
+  panel.delegate = self;
+  [panel setTarget: self];
+  [panel setAction: @selector(selectColor:)];
+  [panel makeKeyAndOrderFront: self];
+}
+
+- (void)windowWillClose:(NSNotification *)notification {
+  NSColorPanel* panel = [NSColorPanel sharedColorPanel];
+  [panel setTarget: nil];
+  [panel setAction: nil];
+}
+
+- (void)selectColor:(id)sender {
+  NSColorPanel* panel = sender;
+  self.backgroundColor = [panel.color colorWithAlphaComponent: [PreferenceManager sharedManager].opacity];
+  [panel setTarget: nil];
+  [panel setAction: nil];
+  [panel orderOut: nil];
+}
+
+- (void)close {
+  NSColorPanel* panel = [NSColorPanel sharedColorPanel];
+  [panel setTarget: nil];
+  [panel setAction: nil];
+  [[NSColorPanel sharedColorPanel] orderOut: nil];
+  [super close];
+}
 
 - (void)mouseDown:(NSEvent *)theEvent {
   self.previousPoint = [theEvent locationInWindow];
