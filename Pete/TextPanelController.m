@@ -29,7 +29,7 @@
 
 
   [_textView scrollToBeginningOfDocument:nil];
-  _textView.editable = NO;
+  _textView.editable = [PreferenceManager sharedManager].editable;
 }
 
 + (instancetype)controller {

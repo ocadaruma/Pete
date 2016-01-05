@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSColor* backgroundColor;
 @property (nonatomic) CGFloat opacity;
+@property (nonatomic) BOOL editable;
 
 + (instancetype)sharedManager;
 

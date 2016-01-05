@@ -80,6 +80,15 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
   }];
 }
 
+- (IBAction)editableChange:(id)sender {
+  NSButton* checkBox = sender;
+  BOOL checked = checkBox.state == NSOnState;
+  [PreferenceManager sharedManager].editable = checked;
+  [_panels enumerateObjectsUsingBlock:^(TextPanel* panel, BOOL *stop) {
+    [panel updateFromPreference];
+  }];
+}
+
 - (void)windowWillClose:(NSNotification *)notification {
   [_panels removeObject:notification.object];
 }

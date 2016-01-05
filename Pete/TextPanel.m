@@ -43,6 +43,7 @@
 - (void)updateFromPreference {
   PreferenceManager* prefManager = [PreferenceManager sharedManager];
   self.backgroundColor = [prefManager.backgroundColor colorWithAlphaComponent:prefManager.opacity];
+  self.textView.editable = prefManager.editable;
 }
 
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent {

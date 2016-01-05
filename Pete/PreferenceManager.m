@@ -10,6 +10,7 @@
 
 static NSString* const kStoredOpacityKey = @"opacity";
 static NSString* const kStoredBackgroundColorKey = @"backgroundColor";
+static NSString* const kStoredEditableFlagKey = @"editable";
 static NSString* const kConfiguredFlagKey = @"configured";
 
 @implementation PreferenceManager
@@ -27,6 +28,10 @@ static NSString* const kConfiguredFlagKey = @"configured";
   return [[NSUserDefaults standardUserDefaults] floatForKey:kStoredOpacityKey];
 }
 
+- (BOOL)editable {
+  return [[NSUserDefaults standardUserDefaults] boolForKey:kStoredEditableFlagKey];
+}
+
 - (void)setBackgroundColor:(NSColor *)backgroundColor {
   NSData* data = [NSArchiver archivedDataWithRootObject:backgroundColor];
   [[NSUserDefaults standardUserDefaults] setObject:data forKey:kStoredBackgroundColorKey];
@@ -38,6 +43,11 @@ static NSString* const kConfiguredFlagKey = @"configured";
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void)setEditable:(BOOL)editable {
+  [[NSUserDefaults standardUserDefaults] setBool:editable forKey:kStoredEditableFlagKey];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (instancetype)init {
   self = [super init];
 
@@ -45,6 +55,7 @@ static NSString* const kConfiguredFlagKey = @"configured";
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kConfiguredFlagKey]) {
       self.backgroundColor = [NSColor whiteColor];
       self.opacity = 1.0f;
+      self.editable = YES;
 
       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kConfiguredFlagKey];
       [[NSUserDefaults standardUserDefaults] synchronize];
