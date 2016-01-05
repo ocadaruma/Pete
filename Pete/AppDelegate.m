@@ -14,14 +14,17 @@
 #import <MASShortcut/Shortcut.h>
 
 static NSString *const kHotKeyPreferenceKey = @"HotKey";
+static NSString *const kSwapPanelHiddenHotKeyPreferenceKey = @"SwapPanelHiddenHotKey";
 
 @interface AppDelegate ()<NSWindowDelegate>
 
 @property (weak) IBOutlet MASShortcutView *shortcutView;
+@property (weak) IBOutlet MASShortcutView *swapPanelHiddenShortcutView;
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (nonatomic) NSMutableSet* panels;
 @property (nonatomic) NSStatusItem* statusItem;
+@property (nonatomic) BOOL panelsHidden;
 
 @end
 
@@ -32,6 +35,7 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
 
   // Insert code here to initialize your application
   self.panels = [NSMutableSet set];
+  self.panelsHidden = NO;
 
   //statusbar initialization
   NSStatusBar* statusBar = [NSStatusBar systemStatusBar];
@@ -40,12 +44,14 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
   [_statusItem setMenu:_statusMenu];
 
   //preference initialization
+
+  /**
+   Shortcut for Popup
+   */
   _shortcutView.associatedUserDefaultsKey = kHotKeyPreferenceKey;
   _shortcutView.style = MASShortcutViewStyleDefault;
-
   MASShortcut* shortcut = [MASShortcut shortcutWithKeyCode:keyCodeOfString(@"A").integerValue
                                              modifierFlags:NSCommandKeyMask | NSShiftKeyMask];
-
   [[MASShortcutBinder sharedBinder] registerDefaultShortcuts:@{kHotKeyPreferenceKey: shortcut}];
   [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:kHotKeyPreferenceKey toAction:^{
     TextPanelController* ctrl = [TextPanelController controller];
@@ -54,6 +60,25 @@ static NSString *const kHotKeyPreferenceKey = @"HotKey";
     ctrl.window.delegate = self;
     [ctrl showWindow:nil];
     [NSApp activateIgnoringOtherApps:YES];
+  }];
+
+  /**
+   Shortcut for swap panel hidden
+   */
+  _swapPanelHiddenShortcutView.associatedUserDefaultsKey = kSwapPanelHiddenHotKeyPreferenceKey;
+  _swapPanelHiddenShortcutView.style = MASShortcutViewStyleDefault;
+  MASShortcut* swapPanelHiddenShortcut = [MASShortcut shortcutWithKeyCode:keyCodeOfString(@"M").integerValue
+                                             modifierFlags:NSCommandKeyMask | NSShiftKeyMask];
+  [[MASShortcutBinder sharedBinder] registerDefaultShortcuts:@{kSwapPanelHiddenHotKeyPreferenceKey: swapPanelHiddenShortcut}];
+  [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:kSwapPanelHiddenHotKeyPreferenceKey toAction:^{
+    [_panels enumerateObjectsUsingBlock:^(NSWindow* w, BOOL *stop) {
+      if (_panelsHidden) {
+        [w makeKeyAndOrderFront:w];
+      } else {
+        [w orderOut:w];
+      }
+    }];
+    self.panelsHidden = !_panelsHidden;
   }];
 }
 
